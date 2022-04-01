@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from "gsap";
 import { Marker } from 'react-map-gl';
 
-function Popup({ station }) {
+function Popup({ station, setSelectedStation }) {
 
     const tl = useRef();
 
@@ -14,6 +14,15 @@ function Popup({ station }) {
             .fromTo(popup, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)" })
     }, [station])
 
+    const closePopup = async () => {
+        tl.current = gsap.timeline()
+        const popup = document.getElementById('popup');
+        await tl.current
+            .to(popup, { opacity: 0, scale: 0, duration: 0.5, ease: "back.out(1.7)" })
+        setSelectedStation(null)
+    }
+
+
     return (
         <Marker
 
@@ -21,9 +30,11 @@ function Popup({ station }) {
             latitude={station.lat}
             offSetTop={-200}
         >
-            <div id='popup' className="w-60 h-32 flex flex-col items-center justify-center bg-black bg-opacity-70 rounded-xl text-white text-lg mb-48">
-                <p>
-                    {station.title} {station.postCode}
+
+            <div id='popup' className="arrow w-72 h-36 flex flex-col items-center justify-center bg-black bg-opacity-70 rounded-xl text-white text-lg mb-52 ">
+                <button className="w-8 absolute top-0 right-0 text-lg font-semibold" onClick={closePopup}>x</button>
+                <p >
+                    {station.title} - {station.postCode}
                 </p>
 
 
@@ -31,7 +42,7 @@ function Popup({ station }) {
                     <div className="flex flex-row items-center pl-[2px] space-x-2">
                         <ParkIcon />
                         <p >
-                            slots: {station.available}
+                            slots: {station.slots}
                         </p>
                     </div>
                     <p >

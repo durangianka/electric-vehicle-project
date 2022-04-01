@@ -19,13 +19,13 @@ const chargingStations = [
     lon: -0.134228
   },
   {
-    title: "Grayland Station",
-    postCode: "WC1N 2AL",
+    title: "Webber St Station",
+    postCode: "SE1 8QW",
     slots: 7,
     available: 2,
     busy: 5,
-    lat: 51.526574,
-    lon: -0.118447
+    lat: 51.500904,
+    lon: -0.105868
   },
   {
     title: "Warner Station",
@@ -37,13 +37,13 @@ const chargingStations = [
     lon: -0.109178
   },
   {
-    title: "Chiswell Station",
-    postCode: "EC1Y 4AG",
+    title: "Lime St Station",
+    postCode: "EC3M 7HR",
     slots: 10,
     available: 7,
     busy: 3,
-    lat: 51.520223,
-    lon: -0.090683
+    lat: 51.511863,
+    lon: -0.083437
   },
 ]
 

@@ -4,7 +4,7 @@ function ProfileWidget({ user }) {
     console.log(user);
 
     return (
-        <div className="w-5/12 h-40 lg:w-1/5 absolute top-0 right-0 mt-32 mr-10 ">
+        <div className="w-9/12 h-40 lg:w-1/5 absolute top-0 left-0 mt-6 ml-2 md:right-0 mf:left-1 md:mt-32 md:ml-6 ">
             <div className="w-full h-full flex flex-row p-2 space-x-6 items-center justify-center rounded-xl bg-black bg-opacity-60 font-medium text-white text-xl">
                 <div className=" flex flex-row items-center justify-center">
                     <JobCardIcon />

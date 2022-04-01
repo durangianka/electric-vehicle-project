@@ -42,18 +42,7 @@ function Map({ chargingStations }) {
                 {
                     selectedStation ? (
 
-                        <Popup station={selectedStation} />
-
-                        // <Marker
-                        //     longitude={selectedStation.lon}
-                        //     latitude={selectedStation.lat}
-                        //     offSetTop={-200}>
-
-
-                        //     <p className="text-3xl text-white mb-16">
-                        //         {selectedStation.title}
-                        //     </p>
-                        // </Marker>
+                        <Popup station={selectedStation} setSelectedStation={setSelectedStation} />
 
                     ) : (false)
                 }
