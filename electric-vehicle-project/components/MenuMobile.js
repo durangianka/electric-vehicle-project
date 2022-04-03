@@ -1,19 +1,6 @@
-import { useEffect, useRef } from 'react'
-import { gsap } from "gsap";
 import { AiOutlineClose } from "react-icons/ai";
 
 function MenuMobile({ setIsOpen, isOpen }) {
-
-    const tl = useRef();
-
-    // useEffect(() => {
-
-    //     tl.current = gsap.timeline()
-    //     const menu = document.getElementById('menu');
-
-    //     tl.current
-    //         .fromTo(menu, { y: 500 }, { y: 0, duration: 0.5, ease: "power1.in" })
-    // }, [isOpen])
 
     return (
         <div id="menu" className="absolute w-full h-screen bg-black text-white z-10 overflow-hidden">
