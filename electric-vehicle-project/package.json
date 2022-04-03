@@ -18,9 +18,7 @@
     "react-icons": "^4.3.1",
     "react-map-gl": "^7.0.10",
     "react-mapbox-gl": "^5.1.1",
-    "react-mapbox-gl-draw": "^2.0.4",
-    "react-video-js-player": "^1.1.1",
-    "recoil": "^0.6.1"
+    "react-video-js-player": "^1.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.4",

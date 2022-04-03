@@ -11,6 +11,7 @@ function Map({ chargingStations, drivers }) {
     const [selectedDriver, setSelectedDriver] = useState(null)
     const [isSelectedDriver, setIsSelectedDriver] = useState(null)
 
+    const [NewPoints, setNewPoints] = useState(drivers)
 
     const [viewport, setViewPort] = useState({
         width: "100%",
@@ -20,6 +21,16 @@ function Map({ chargingStations, drivers }) {
         zoom: 12
     })
 
+    useEffect(() => {
+        setInterval(async () => {
+            await NewPoints.map(async newPoint => {
+                if (newPoint.routeGeojson.geometry.coordinates.length > 1) {
+                    await newPoint.routeGeojson.geometry.coordinates.shift();
+                }
+            })
+            setNewPoints(NewPoints)
+        }, 1500)
+    }, [NewPoints])
 
     return (
         <div className="flex-1">
@@ -43,8 +54,8 @@ function Map({ chargingStations, drivers }) {
 
                             </Marker>
                         </div>
-                    )
-                    )}
+                    ))
+                }
                 {
                     selectedStation ? (
 
@@ -56,37 +67,26 @@ function Map({ chargingStations, drivers }) {
                 {
                     drivers &&
 
-                    drivers.map(driver => {
+                    NewPoints.map(driver => (
+                        <div key={driver.id}>
 
-                        const [newPoints, setNewPoints] = useState(driver.routeGeojson.geometry.coordinates);
+                            <Marker
+                                longitude={driver.routeGeojson.geometry.coordinates[0][0]}
+                                latitude={driver.routeGeojson.geometry.coordinates[0][1]}
+                            >
+                                <div className=" w-14 h-14 cursor-pointer">
+                                    <Bicycle onClick={() => { setIsSelectedDriver(!isSelectedDriver); setSelectedDriver(driver) }} />
+                                </div>
+                            </Marker>
 
-                        setInterval(() => {
-                            if (newPoints.length > 1) {
-                                newPoints.shift();
-                                setNewPoints(newPoints)
+                            {
+                                isSelectedDriver && (
+                                    <Driver selectedDriver={selectedDriver} />
+                                )
                             }
-                        }, 1500);
-
-                        return (
-                            <div key={driver.id}>
-
-                                <Marker
-                                    longitude={newPoints[0][0]}
-                                    latitude={newPoints[0][1]}
-                                >
-                                    <div className=" w-14 h-14 cursor-pointer">
-                                        <Bicycle onClick={() => { setIsSelectedDriver(!isSelectedDriver); setSelectedDriver(driver) }} />
-                                    </div>
-                                </Marker>
-
-                                {
-                                    isSelectedDriver && (
-                                        <Driver selectedDriver={selectedDriver} setSelectedDriver={setSelectedDriver} />
-                                    )
-                                }
-                            </div>
-                        )
-                    })
+                        </div>
+                    )
+                    )
                 }
 
             </ReactMapboxGl >

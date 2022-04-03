@@ -1,8 +1,6 @@
 
 function ProfileWidget({ user }) {
 
-    console.log(user);
-
     return (
         <div className="w-8/12 h-40 sm:w-6/12 md:w-6/12 lg:w-2/5 xl:w-1/5 absolute top-0 left-0 mt-8 ml-2 md:right-0 md:left-auto md:mt-32 md:mr-6 ">
             <div className="w-full h-full flex flex-row p-2 space-x-6 items-center justify-center rounded-xl bg-black bg-opacity-60 font-medium text-white text-xl">

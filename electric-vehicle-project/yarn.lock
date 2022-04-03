@@ -2158,11 +2158,6 @@ gsap@^3.10.0:
   resolved "https://registry.npmjs.org/gsap/-/gsap-3.10.0.tgz"
   integrity sha512-WTefeoEYX3eepBBfrrVHfcf8n3lomM1jGgUlbRbWltrefgyo/btu3i9Ab18OVthjxDJnTSQSQ5pK5bDq3Uv/nw==
 
-hamt_plus@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/hamt_plus/-/hamt_plus-1.0.2.tgz"
-  integrity sha1-4hwlKWjH4zsg9qGwlM2FeHomVgE=
-
 has-bigints@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/has-bigints/-/has-bigints-1.0.1.tgz"
@@ -3587,11 +3582,6 @@ react-map-gl@^7.0.10:
   dependencies:
     "@types/mapbox-gl" "^2.6.0"
 
-react-mapbox-gl-draw@^2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/react-mapbox-gl-draw/-/react-mapbox-gl-draw-2.0.4.tgz#476d70a6efc07c329fa61c11022bcdab60ac4b91"
-  integrity sha512-oaBdIlyu+g7PhLUvwnCsl/wvu+5tGB9I3RLjcrYLt6U1sUMzQJqplKtVxXRv9TZqRdNaAU5qNOP+dRs55QKjsA==
-
 react-mapbox-gl@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/react-mapbox-gl/-/react-mapbox-gl-5.1.1.tgz#49e1ddf441c3ff9406d10ccd577ac5448d51584c"
@@ -3666,13 +3656,6 @@ readdirp@~3.6.0:
   integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
   dependencies:
     picomatch "^2.2.1"
-
-recoil@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.npmjs.org/recoil/-/recoil-0.6.1.tgz"
-  integrity sha512-J7oT3LZl2vpyFClgSUpOQjpykz84VSX/NJE/PavAtR8n7Z+whEdVBPUtwc2TEWjONeL/lJmiac2XQ+qEOQA52Q==
-  dependencies:
-    hamt_plus "1.0.2"
 
 regenerator-runtime@^0.13.4:
   version "0.13.9"

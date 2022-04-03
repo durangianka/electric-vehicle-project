@@ -1,21 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
 import { Marker, Source, Layer } from 'react-map-gl';
-import { gsap } from "gsap";
-
-
 
 function Driver({ selectedDriver }) {
-
-    const tl = useRef();
-
-    useEffect(() => {
-
-        const driverDiv = document.getElementById('driver');
-        tl.current = gsap.timeline();
-        tl.current
-            .fromTo(driverDiv, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)" })
-
-    }, [selectedDriver.routeGeojson.geometry.coordinates])
 
 
     return (
